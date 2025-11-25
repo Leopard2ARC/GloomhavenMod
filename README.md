@@ -89,11 +89,11 @@ EnableSaveLoadFix \= true
 
 Debug Build (with detailed logging):**
 
-MSBuild GloomhavenNoBurnMod.csproj /v:detailed /fl /flp:logfile=build-detail.log /p:Configuration=Debug
+`MSBuild GloomhavenMod.csproj /v:detailed /fl /flp:logfile=build-detail.log /p:Configuration=Debug`
 
 **Release Build:**
 
-MSBuild GloomhavenNoBurnMod.csproj /p:Configuration=Release
+`MSBuild GloomhavenMod.csproj /p:Configuration=Release`
 
 
 ## **Credits**
@@ -105,3 +105,4 @@ MSBuild GloomhavenNoBurnMod.csproj /p:Configuration=Release
 
 
 [MIT License](https://www.google.com/search?q=LICENSE)
+
