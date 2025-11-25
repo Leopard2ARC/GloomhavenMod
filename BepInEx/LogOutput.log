@@ -1,0 +1,34 @@
+[Message:   BepInEx] BepInEx 5.4.23.4 - GH (2025/10/8 6:02:53)
+[Info   :   BepInEx] Running under Unity v2021.3.5.4254522
+[Info   :   BepInEx] CLR runtime version: 4.0.30319.42000
+[Info   :   BepInEx] Supports SRE: True
+[Info   :   BepInEx] System platform: Bits64, Windows
+[Message:   BepInEx] Preloader started
+[Info   :   BepInEx] Loaded 1 patcher method from [BepInEx.Preloader 5.4.23.4]
+[Info   :   BepInEx] 1 patcher plugin loaded
+[Info   :   BepInEx] Patching [UnityEngine.CoreModule] with [BepInEx.Chainloader]
+[Message:   BepInEx] Preloader finished
+[Message:   BepInEx] Chainloader ready
+[Message:   BepInEx] Chainloader started
+[Info   :   BepInEx] 1 plugin to load
+[Info   :   BepInEx] Loading [Gloomhaven Fixes & NoBurn 2.0.0]
+[Info   :Gloomhaven Fixes & NoBurn] [Mod] 加载模块: NoBurn (休息不烧卡)
+[Info   :Gloomhaven Fixes & NoBurn] [Mod] 加载模块: Compile Fix (防止Mod文件误删)
+[Info   :Gloomhaven Fixes & NoBurn] [Mod] 加载模块: Save/Load Fixes (防止坏档/丢失进度)
+[Info   :Gloomhaven Fixes & NoBurn] Gloomhaven Fixes & NoBurn v2.0.0 加载完毕！
+[Message:   BepInEx] Chainloader startup complete
+[Info   :XUnity.AutoTranslator] Version of TextMesh Pro: 1.4.0.
+[Warning:  HarmonyX] AccessTools.Method: Could not find method for type TMPro.TMP_Text and name SetCharArray and parameters (int[], int, int)
+[Warning:XUnity.AutoTranslator] Could not hook 'TMP_Text_SetCharArray_Hook3'. Likely due differences between different versions of the engine or text framework.
+[Info   :XUnity.AutoTranslator] Attempting to load TextMesh Pro font from asset bundle.
+[Info   :XUnity.AutoTranslator] Loaded TextMesh Pro font uses version: 1.1.0
+[Warning:XUnity.AutoTranslator] TextMesh Pro version mismatch. Font asset version: 1.1.0, TextMesh Pro version: 1.4.0
+[Info   :XUnity.AutoTranslator] Loaded fallback font for TextMesh Pro: yujisyuku_regular_sdf_u2019
+[Info   :XUnity.AutoTranslator] Loaded XUnity.AutoTranslator into Unity [2021.3.5f1] game.
+[Warning:XUnity.AutoTranslator] Input API is not available!
+System.InvalidOperationException: You are trying to read Input using the UnityEngine.Input class, but you have switched active Input handling to Input System package in Player Settings.
+  at (wrapper managed-to-native) UnityEngine.Input.GetKeyInt(UnityEngine.KeyCode)
+  at UnityEngine.Input.GetKey (UnityEngine.KeyCode key) [0x00001] in <b25ec1c965ca4d11ba6490c9b72dd347>:0 
+  at XUnity.AutoTranslator.Plugin.Core.AutoTranslationPlugin.HandleInput () [0x00000] in <d72671f57d714bc5addd49f1c82bf7b1>:0 
+  at XUnity.AutoTranslator.Plugin.Core.AutoTranslationPlugin.HandleInputSafe () [0x00007] in <d72671f57d714bc5addd49f1c82bf7b1>:0 
+[Info   :XUnity.AutoTranslator] Skipping plugin scan because no plugin-specific translations has been registered.
