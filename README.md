@@ -87,7 +87,7 @@ EnableSaveLoadFix \= true
 
 ### **Building via Command Line**
 
-**Debug Build (with detailed logging):**
+Debug Build (with detailed logging):**
 
 MSBuild GloomhavenNoBurnMod.csproj /v:detailed /fl /flp:logfile=build-detail.log /p:Configuration=Debug
 
@@ -95,11 +95,13 @@ MSBuild GloomhavenNoBurnMod.csproj /v:detailed /fl /flp:logfile=build-detail.log
 
 MSBuild GloomhavenNoBurnMod.csproj /p:Configuration=Release
 
+
 ## **Credits**
 
 * Uses [Harmony](https://github.com/pardeike/Harmony) for runtime patching.  
 * Built on [BepInEx](https://github.com/BepInEx/BepInEx).
 
 ## **License**
+
 
 [MIT License](https://www.google.com/search?q=LICENSE)
