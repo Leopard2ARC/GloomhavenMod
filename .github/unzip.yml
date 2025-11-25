@@ -1,0 +1,45 @@
+# .github/workflows/unzipp.yml
+
+name: Unzip Code
+on:
+  push:
+    branches:
+      - main 
+
+permissions:
+  contents: write
+
+jobs:
+  unzip:
+    runs-on: ubuntu-22.04
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 
+
+      - name: List files (for debugging)
+        run: ls -la
+
+      - name: Unzip project.zip
+        run: |
+          if [ -f project.zip ]; then
+            unzip -o project.zip -d .
+            rm project.zip
+          else
+            echo "Error: project.zip not found!"
+            exit 1
+          fi
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "Chore: Unzipped project.zip" 
+            git push
+          else
+            echo "No changes to commit."
+          fi
