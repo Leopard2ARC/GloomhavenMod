@@ -1,108 +1,169 @@
 # **Gloomhaven Fixes & NoBurn Mod**
 
-A BepInEx plugin for **Gloomhaven (Digital)** that fixes critical bugs related to Custom Rulesets (Mods) and offers an optional "No Burn" cheat feature.
+### **🎯 Stop Losing Your Saves. Play Your Way.**
 
-## **Overview**
+A essential mod for **Gloomhaven (Digital)** that fixes game-breaking bugs and gives you control over how you play.
 
-This mod serves two main purposes:
+---
 
-1. **Bug Fixes:** It patches critical issues in the base game's code regarding how Custom Rulesets are compiled and how modded saves are handled. These fixes are essential for anyone playing with or developing mods.  
-2. **Gameplay Modification (Optional):** It includes a "No Burn" mode where Long and Short rests return discarded cards to your hand instead of burning one, allowing for infinite play (cheat).
+## **Why You Need This**
 
-## **Features**
+### **😤 Are You Experiencing These Problems?**
 
-### **🛠️ Core Fixes (Highly Recommended)**
+- ✅ **Your modded saves vanish from the load menu**
+- ✅ **The Resume button randomly stops working**
+- ✅ **Your custom mod files get deleted when compiling**
+- ✅ **Save files conflict and corrupt your progress**
+- ✅ **You want to experiment without permanently burning cards**
 
-* **Compile Fix:** Prevents the game from accidentally deleting your source mod files (in the Z folder) when compiling a Custom Ruleset.  
-* **Save/Load Fix:** Fixes serious bugs where:  
-  * Modded saves would disappear from the menu due to incorrect save name parsing.  
-  * Resume buttons would fail to appear for modded games.  
-  * Saves could be lost due to file naming conflicts.  
-  * *Includes an auto-scan feature on startup to recover "missing" mod saves.*
+**This mod fixes all of these issues.**
 
-### **🎮 Gameplay Mods**
+---
 
-* **No Burn Mode:** \* **Short Rest:** Does not burn a random card. All discarded cards return to hand.  
-  * **Long Rest:** Does not burn a selected card. All discarded cards return to hand.
+## **What You Get**
 
-## **Installation**
+### **🛡️ Critical Bug Fixes (Enabled by Default)**
 
-1. Download the latest release zip file.  
-2. Extract the contents directly into your **Gloomhaven game directory** (where GH.exe is located).  
-3. Ensure your folder structure looks like this:  
-   Gloomhaven/  
-   ├── GH.exe  
-   ├── winhttp.dll  
-   ├── doorstop\_config.ini  
-   ├── .doorstop\_version  
-   └── BepInEx/  
-       ├── core/  
-       ├── plugins/  
-       │   └── GloomhavenFixes.dll  
-       └── ...
+**✓ Save Protection**  
+Never lose your modded saves again. This fixes the broken save name parsing that makes your games disappear from the menu. Includes automatic recovery of "missing" saves on startup.
 
-4. Run the game.
+**✓ Resume Button Fix**  
+Resume buttons now work correctly with custom rulesets.
 
-## **Configuration**
+**✓ Compile Safety**  
+Prevents the game from accidentally deleting your mod source files when compiling custom rulesets.
 
-This mod appends its configuration settings to the standard BepInEx.cfg file.
+### **🎮 Optional Gameplay Features**
 
-Location: Gloomhaven\\BepInEx\\config\\BepInEx.cfg
+**✓ No Burn Mode (Disabled by Default)**  
+Play without the card burn mechanic:
+- **Short Rest:** All discarded cards return to your hand (no random burn)
+- **Long Rest:** All discarded cards return to your hand (no card selection needed)
 
-Open the file with a text editor and look for the \[Modules\] section:
+Perfect for experimenting with builds, learning new classes, or just relaxing without pressure.
 
-\[Modules\]
+---
 
-\#\# Enable No Burn: Long and Short rests no longer destroy cards (Cheat).  
-\# Setting type: Boolean  
-\# Default value: false  
-EnableNoBurn \= false
+## **Key Advantages**
 
-\#\# Enable Compile Fix: Fixes the issue where the game incorrectly deletes Mod source files when compiling a Custom Ruleset (Recommended).  
-\# Setting type: Boolean  
-\# Default value: true  
-EnableCompileFix \= true
+### **🔒 100% Safe & Reversible**
 
-\#\# Enable Save/Load Fix: Fixes critical bugs where Custom Ruleset saves fail to appear or save name parsing errors cause data loss (Highly Recommended).  
-\# Setting type: Boolean  
-\# Default value: true  
-EnableSaveLoadFix \= true
+- **No game files modified** - Works alongside the vanilla game
+- **Toggle any feature on/off** - Simple config file
+- **Save/Load for backups** - Create restore points anytime
+- **Uninstall cleanly** - Just delete the mod files
 
-## **Build Instructions**
+### **👥 For Everyone**
 
-### **Prerequisites**
+- **Hardcore players:** Get the bug fixes, disable the cheats
+- **Casual players:** Enable No Burn for stress-free gameplay
+- **Mod developers:** Essential fixes for custom ruleset development
+- **Everyone:** Stop losing your saves!
 
-* Visual Studio or MSBuild tools.  
-* Gloomhaven game files (for references).
+---
 
-### **Setup**
+## **Quick Start**
 
-1. Clone this repository.  
-2. **Important:** Open GloomhavenNoBurnMod.csproj in a text editor.  
-3. Locate the \<GloomhavenRoot\> tag and change the path to your local Gloomhaven game directory:  
-   \<PropertyGroup\>  
-     \<GloomhavenRoot\>C:\\Program Files (x86)\\Steam\\steamapps\\common\\Gloomhaven\</GloomhavenRoot\>  
-     \<\!-- ... \--\>  
-   \</PropertyGroup\>
+### **Step 1: Install (30 seconds)**
 
-### **Building via Command Line**
+1. **Download** the latest release
+2. **Extract** everything into your Gloomhaven folder (where `GH.exe` is)
+3. **Launch** the game - that's it!
 
-Debug Build (with detailed logging):**
+Your folder should look like:
+```
+Gloomhaven/
+├── GH.exe
+├── winhttp.dll
+├── doorstop_config.ini
+└── BepInEx/
+    └── plugins/
+        └── GloomhavenFixes.dll
+```
 
-`MSBuild GloomhavenMod.csproj /v:detailed /fl /flp:logfile=build-detail.log /p:Configuration=Debug`
+### **Step 2: Configure (Optional)**
 
-**Release Build:**
+Want to enable No Burn mode or disable fixes? 
 
-`MSBuild GloomhavenMod.csproj /p:Configuration=Release`
+**Location:** `Gloomhaven\BepInEx\config\BepInEx.cfg`
 
+```ini
+[Modules]
+## Bug Fixes (Recommended to keep enabled)
+EnableCompileFix = true        # Prevents mod file deletion
+EnableSaveLoadFix = true       # Fixes missing saves
+
+## Gameplay Mods (Your choice)
+EnableNoBurn = false           # Change to 'true' for infinite cards
+```
+
+**Edit with any text editor, save, restart the game.**
+
+---
+
+## **FAQ**
+
+**Q: Will this break my existing saves?**  
+A: No. The mod is designed to *fix* and *recover* saves, not break them.
+
+**Q: Can I use this for just the bug fixes?**  
+A: Absolutely! No Burn is disabled by default. You get the fixes automatically.
+
+**Q: Is this cheating?**  
+A: The bug fixes are not cheats - they fix broken game code. No Burn mode is optional and clearly marked as a cheat feature.
+
+**Q: Does this work with other mods?**  
+A: Yes, it's designed specifically to make custom rulesets work properly.
+
+**Q: Can I turn features on/off mid-campaign?**  
+A: Yes, just edit the config file and restart the game.
+
+---
+
+## **For Mod Developers**
+
+If you're creating custom rulesets, the **Compile Fix** and **Save/Load Fix** are essential:
+
+- **Compile Fix:** Stops the game from deleting your source files in the Z folder
+- **Save/Load Fix:** Ensures your modded saves load correctly and don't conflict
+
+These fixes solve fundamental issues in the game's mod compilation system.
+
+---
+
+## **Troubleshooting**
+
+**Saves still missing?**  
+The mod auto-scans on startup. If saves don't appear immediately, restart the game once more.
+
+**Config file not found?**  
+Launch the game once - BepInEx creates the config file on first run.
+
+**Need help?**  
+Check the Issues tab or create a new issue with your problem.
+
+---
+
+## **Technical Details**
+
+- Built on **BepInEx** (industry-standard modding framework)
+- Uses **Harmony** for safe runtime patching
+- No permanent game modifications
+- Open source under MIT License
+
+---
 
 ## **Credits**
 
-* Uses [Harmony](https://github.com/pardeike/Harmony) for runtime patching.  
-* Built on [BepInEx](https://github.com/BepInEx/BepInEx).
+- [Harmony](https://github.com/pardeike/Harmony) - Runtime patching library
+- [BepInEx](https://github.com/BepInEx/BepInEx) - Modding framework
 
-## **License**
+---
 
+## **Support This Project**
 
-[MIT License](https://www.google.com/search?q=LICENSE)
+Found this helpful? ⭐ **Star this repository** to help others discover it!
 
+---
+
+**License:** [MIT License](LICENSE) - Free to use, modify, and share.

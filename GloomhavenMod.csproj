@@ -10,8 +10,8 @@
     <ProjectGuid>{4A3588DC-F2EF-4D7E-9A3C-28C5C23A38FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GloomhavenNoBurnMod</RootNamespace>
-    <AssemblyName>GloomhavenNoBurnMod</AssemblyName>
+    <RootNamespace>GloomhavenMod</RootNamespace>
+    <AssemblyName>GloomhavenMod</AssemblyName>
     <!-- Target Framework -->
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -21,7 +21,7 @@
   
   <!-- Game Paths Configuration -->
   <PropertyGroup>
-    <GloomhavenRoot>C:\\Program Files (x86)\\Steam\\steamapps\\common\\Gloomhaven</GloomhavenRoot>
+    <GloomhavenRoot>E:\\Gloomhaven</GloomhavenRoot>
     <ManagedDir>$(GloomhavenRoot)\GH_Data\Managed</ManagedDir>
     <BepInExDir>$(GloomhavenRoot)\BepInEx\core</BepInExDir>
   </PropertyGroup>

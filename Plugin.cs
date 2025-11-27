@@ -10,7 +10,7 @@ namespace GloomhavenFixes
     [BepInPlugin(GUID, NAME, VERSION)]
     public class Plugin : BaseUnityPlugin
     {
-        public const string GUID = "com.aphrodite.gloomhaven.fixes";
+        public const string GUID = "com.Leopard2ARC.gloomhaven.fixes";
         public const string NAME = "Gloomhaven Fixes & Mod";
         public const string VERSION = "0.0.0";
 
